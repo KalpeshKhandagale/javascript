@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            color: #000;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin: auto;
+            background-color: aliceblue;
+            width: 100px;
+            height: 35px;
+        }
+
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal {
+            background-color: aquamarine;
+            border-radius: 10px;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            position: relative;
+        }
+
+        body.modal-is-open .modal-overlay {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .modal-close {
+            cursor: pointer;
+            background-color: #000;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            right: -3%;
+            top: -3%;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="button">Modal Open</button>
+
+    <div class="modal-overlay">
+        <div class="modal">
+             <div class="modal-close"></div>
+        </div>
+    </div>
+
+    <script>
+        const modalOpenButton = document.querySelector('button')
+        const modalCloseButton = document.querySelector('.modal-close')
+        const body = document.body
+
+        const ifModalIsOpen = _ => {
+            return body.classList.contains('modal-is-open')
+        }
+
+        const modalOpen = _ => {
+            body.classList.add('modal-is-open')
+        }
+
+        const modalIsClose = _ => {
+            body.classList.remove('modal-is-open')
+        }
+
+        modalOpenButton.addEventListener('click', _ => {
+            ifModalIsOpen() ? modalIsClose() : modalOpen()
+        })
+
+        modalCloseButton.addEventListener('click', _ => {
+            modalIsClose()
+        })
+
+        document.addEventListener('keydown', event => {
+            if(ifModalIsOpen() && event.key === "Escape"){
+                modalIsClose()
+            }
+        })
+    </script>
+</body>
+</html>]

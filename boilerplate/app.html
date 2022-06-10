@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body.button-is-clicked {
+             background-color: #99aefa;
+        }
+
+        button, .button {
+            color: #fff;
+            background-color: #1ce;
+            padding: 25px;
+        }
+
+        button.is-clicked {
+            background-color: #bada55;
+        }
+
+        .dom-react {
+            border: 2px solid skyblue;
+            width: 200px;
+            height: 100px;
+            position: relative;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="add">Add a "red" class to me!</div>
+
+    <div class="remove">Remove the class, "remove" from me!</div>
+    <div class="contains1">Do I have a "blue" class?</div>
+
+    <div class="contains2 blue">Do I have a "blue" class?</div>
+
+    <div class="toggle">Do I have a "red" class? If yes, remove it. If no, add it.</div>
+
+
+    <ul id="star-wars-characters">
+        <li class="character luke" data-type="hero">Luke Skywalker</li>
+        <li class="character yoda" data-type="master">Yoda</li>
+        <li class="character badboy" data-type="villain">Darth Vader</li>
+    </ul>
+
+    <button>click</button>
+
+    <p>Paragraph</p>
+    <p>Paragraph</p>
+    <p>Paragraph</p>
+    <p>Paragraph</p>
+
+    <button class="button">Button</button>
+
+
+    <div class="element" style="color: red; background-color: white; font-size: 5em">Big red text!</div>
+
+    <div class="clown-hat" data-color="red" data-num-stripes="3">A Clown hat</div>
+
+    <div class="dom-react"></div>
+
+    <div class="component">
+        <div class="component__element">component element</div>
+    </div>
+
+    <ul class="list">
+        <li class="li">Link 1</li>
+        <li>Link 2</li>
+        <li>Link 3</li>
+        <li>Link 4</li>
+    </ul>
+
+
+    <div class="characters">
+        <ul class="hobbits">
+            <li>Frodo Baggins</li>
+            <li>Samwise "Sam" Gamgee</li>
+            <li>Meriadoc "Merry" Brandybuck</li>
+            <li>Peregrin "Pippin" Took</li>
+            <li>Bilbo Baggins</li>
+        </ul>
+        <ul class="humans">
+            <li>Gandalf</li>
+            <li>Saruman</li>
+            <li>Aragorn</li>
+            <li>Boromir</li>
+            <li>Faramir</li>
+        </ul>
+        <ul class="elves">
+            <li>Legolas</li>
+            <li>Glorfindel</li>
+            <li>Elrond</li>
+            <li>Arwen Evenstar</li>
+        </ul>
+        <ul class="enemies">
+            <li>Sauron</li>
+            <li>Nazgûl</li>
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
