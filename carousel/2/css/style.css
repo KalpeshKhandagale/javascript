@@ -101,3 +101,7 @@
             background-color: var(--color-default-state);
         }
 
+        .carousel__dot.is-selected {
+            background-color: var(--color-selected-state);
+        }
+
