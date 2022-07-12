@@ -5,6 +5,16 @@ const contents = document.querySelector('.carousel__contents')
 const dots = Array.from(carousel.querySelectorAll('.carousel__dot'))
 const slides = Array.from(carousel.querySelectorAll('.carousel__slide'))
 const dotsContainer = carousel.querySelector('.carousel__dots')
+const rect = slides[0].getBoundingClientRect()
+const slideWidth = slides[0].getBoundingClientRect().width
+
+slides[0].style.left = slideWidth * 0 + 'px'
+slides[1].style.left = slideWidth * 1 + 'px'
+slides[2].style.left = slideWidth * 2 + 'px'
+
+// console.log(slideWidth)
+
+
 
 nextButton.addEventListener('click', event => {
     const currentSlide = contents.querySelector('.is-selected')
@@ -94,4 +104,9 @@ dots.forEach(dot => {
             nextButton.removeAttribute('hidden')
         }
     })
+})
+
+
+slides.forEach((slide, index) => {
+    slide.style.left = slideWidth * index + 'px'
 })

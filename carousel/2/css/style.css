@@ -18,7 +18,7 @@
         }
 
         .carousel {
-            width: 800px;
+            width: 80%;
             height: 500px;
             margin: 8% auto 0;
             position: relative;
@@ -89,6 +89,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 25px 0 0;
         }
 
         .carousel__dot {
