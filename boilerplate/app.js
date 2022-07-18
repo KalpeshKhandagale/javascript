@@ -540,10 +540,27 @@
 
 
 
-const greatPeople = document.querySelector('ul')
+// const greatPeople = document.querySelector('ul')
 
-greatPeople.addEventListener('click', e => {
-   if(e.target.closest('li')) {
-       console.log(e.target)
-   }
-})
+// greatPeople.addEventListener('click', e => {
+//    if(e.target.closest('li')) {
+//        console.log(e.target)
+//    }
+// })
+
+const listenForFiveClicks = e => {   
+    const elem = e.currentTarget
+    const prevCount = parseInt(elem.dataset.count) || 0
+    const currentCount = prevCount + 1
+
+    elem.dataset.count = currentCount
+    console.log(`clicked ${currentCount} times`)
+
+    if(currentCount === 5) {
+        elem.removeEventListener('click', listenForFiveClicks)
+    }
+}
+
+const button = document.querySelector('button')
+button.addEventListener('click', listenForFiveClicks)
+
