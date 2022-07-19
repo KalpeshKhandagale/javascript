@@ -106,6 +106,13 @@ dots.forEach(dot => {
     })
 })
 
+// dotsContainer.addEventListener('click', event => {
+//     const dot = event.target.matches('button')
+
+//     if (dot) {
+//         console.log('Event Delegation Trigger with matches event')
+//     }
+// })
 
 slides.forEach((slide, index) => {
     slide.style.left = slideWidth * index + 'px'
