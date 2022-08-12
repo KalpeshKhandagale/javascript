@@ -63,7 +63,7 @@
 //     arArray : []
 // }
 
-// anObject.anFunction('Arrow');
+// anObject.anFunction('This Method!');
 
 
 
@@ -477,7 +477,7 @@
 
 
 // const characters = document.querySelector('.characters')
-// // const humans = characters.children[1]
+// const humans = characters.children[3]
 // const humans = document.querySelectorAll('.humans')
 // console.log(humans)
 

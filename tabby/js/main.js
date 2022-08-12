@@ -1,5 +1,4 @@
 // Start writing JavaScript here!
-
 const tabs = Array.from(document.querySelectorAll('.tab'))
 const tabby = document.querySelector('.tabby')
 const tabContents = Array.from(tabby.querySelectorAll('.tab-content'))

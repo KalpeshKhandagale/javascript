@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS */
+            button {
+            background-color: pink;
+            transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+            /* Other properties */
+        }
+
+        button.is-highlighted {
+            background-color: goldenrod;
+            transform: translateX(1em);
+        }
+
+    </style>
+</head>
+<body>
+    <button>Click</button>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', e => {
+            e.target.classList.add('is-highlighted')
+        })
+
+
+        // The transitionend event
+
+        // document.addEventListener("transitionend", e => {
+        //     console.log("event.target is ", e.target)
+        //     console.log("event.propertyName is ", e.propertyName)
+        // })
+
+        document.addEventListener("animationend", e => {
+                console.log("event.target is ", e.target)
+                console.log("event.animationName is ", e.animationName)
+        })
+
+
+    </script>
+</body>
+</html>
