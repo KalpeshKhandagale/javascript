@@ -564,3 +564,14 @@ const listenForFiveClicks = e => {
 const button = document.querySelector('button')
 button.addEventListener('click', listenForFiveClicks)
 
+
+const goodGuy = document.querySelectorAll('[data-type="good-guy"]')
+const character = document.querySelectorAll('.character')
+
+character.forEach(c => {
+    c.classList.add('star-wars')
+})
+
+goodGuy.forEach(c => {
+    c.classList.add('yay')
+})

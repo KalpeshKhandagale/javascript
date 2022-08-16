@@ -1,6 +1,3 @@
-
-
-
 const accordions = Array.from(document.querySelectorAll('.accordion'))
 const accordionContainer = document.querySelector('.accordion-container')
 // const accordionHeader = accordion.querySelector('.accordion__header')
