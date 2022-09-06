@@ -86,28 +86,28 @@
 
     <!-- <script src="js/main.js"></script> -->
     <script>
-        const tabs =  Array.from(document.querySelectorAll('.tab'))      
+        const tabs =  Array.from(document.querySelectorAll('.tab'))
         const tabby = document.querySelector('.tabby')
         const tabContents = Array.from(document.querySelectorAll('.tab-content'))
 
+        
         tabs.forEach(tab => {
-          tab.addEventListener('click', event => {
+            tab.addEventListener('click', event => {
+              const target = event.currentTarget.getAttribute("data-theme")
+              const tabContent = tabby.querySelector('#' + target)
+              
+             tabs.forEach(t => {
+               t.classList.remove('is-selected')
+               tab.classList.add('is-selected')
+             })
 
-            const target = tab.getAttribute('data-theme)'
-            const tabContent = document.querySelector('#' + target)
-
-            tabs.forEach(t => {
-              t.classList.remove('is-selected')
-              tab.classList.add('is-selected')
+             tabContents.forEach(c => {
+               c.classList.remove('is-selected')
+               tabContent.classList.add('is-selected')
+             })
             })
-
-            tabContents.forEach(c => {
-              c.classList.remove('is-selected')
-              tabContent.classList.add('is-selected')
-            })
-
-          })
         })
+        
     </script>
   </body>
 </html>
