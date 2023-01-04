@@ -575,3 +575,34 @@ character.forEach(c => {
 goodGuy.forEach(c => {
     c.classList.add('yay')
 })
+
+
+function callback () {
+    // do something
+    
+}
+  
+
+const elementOnEvent = document.querySelector('.event-listner')
+
+elementOnEvent.addEventListener('click', () => {
+    elementOnEvent.classList.add('red')
+})
+
+elementOnEvent.addEventListener('click', () => {
+    console.log('Hello World')
+})
+
+function callbackAcceptingFunction(callback) {
+    // Execute callback here
+    callback('1', '2')
+}
+
+function callback (arg1, arg2) {  
+    // Do something here
+    console.log(arg1)
+    
+    console.log(arg2)
+}
+
+callbackAcceptingFunction(callback);
