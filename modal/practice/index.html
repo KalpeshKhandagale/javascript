@@ -1,29 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal: Building a Modal</title>
     <style>
-        body, html { width: 100%; height: 100%; }
-        .container { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
-        .modal-open-button { color: #000; cursor: pointer;  background-color: aquamarine; padding: 10px; display: inline-block; }
-        .modal-overlay { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; opacity: 0; z-index: -1; }
-        .modal { width: 600px; height: 600px; background-color: aquamarine; display: flex; justify-content: center; align-items: center; position: relative; }
-        .modal-close-button { cursor: pointer; color: #fff; display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; border-radius: 50%; background-color: #000; position: absolute; right: -15px; top: -15px; }
-        .modal-is-open .modal-overlay { opacity: 1; z-index: 1; }
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal-open-button {
+            color: #000;
+            cursor: pointer;
+            background-color: aquamarine;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .modal {
+            width: 600px;
+            height: 600px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .modal-close-button {
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #000;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+        }
+
+        .modal-is-open .modal-overlay {
+            opacity: 1;
+            z-index: 1;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="container">
+        <p class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sed omnis expedita est a beatae fugiataperiam nobis quae et, possimus optio, deserunt voluptate explicabo fugit consectetur molestiae? Animi,minima.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat aperiam, doloribus sint autem,tempora voluptate non, optio debitis unde sapiente pariatur in amet modi repudiandae. Dicta voluptate voluptatem
+            laboriosam in.
+        </p>
         <div class="modal-open-button">
-            Click me!  
+            Click me!
         </div>
     </div>
     <div class="modal-overlay">
         <div class="modal">
-            <div class="modal-close-button">X</div>
+             <div class="modal-close-button">X</div>
             <img src="https://cdn-icons-png.flaticon.com/512/648/648379.png" alt="" width="300">
         </div>
     </div>
@@ -37,6 +102,14 @@
         modalCloseButton.addEventListener('click', event => {
             document.body.classList.remove('modal-is-open')
         })
+
+        const form = document.querySelector('form')
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', e => {
+            const target = e.target
+        })
     </script>
 </body>
+
 </html>
