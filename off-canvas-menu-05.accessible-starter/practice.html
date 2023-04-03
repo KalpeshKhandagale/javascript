@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off Canvas Menu</title>
+    <style>
+        body { background-color: aquamarine; position: relative; transform: translate(-100px, 10px); transition: .5s ease-out; display: flex;  }
+        button { background-color: transparent; border: none; cursor: pointer; }
+        .offsite-is-open { transform: translate(0px, 10px); }
+    </style> 
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Service</li>
+            <li>Gallery</li>
+            <li>Contact US</li>
+        </ul>
+    </div>
+    <div class="content">
+        <button><img src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/512/external-horizontal-separated-bars-representing-hamburger-menu-layout-grid-bold-tal-revivo.png" alt="" width="50"></button><br/><br/>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eligendi minima a ratione molestiae iusto maxime, tempora asperiores cumque voluptates perspiciatis eveniet commodi expedita, ut quidem saepe inventore, perferendis distinctio.
+    </div>
+    <script>
+        const button = document.querySelector('button')
+        const body = document.querySelector('body')
+        button.addEventListener('click', function(){
+            body.classList.toggle('offsite-is-open')
+        })
+    </script>
+</body>
+</html>
