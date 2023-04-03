@@ -1,7 +1,7 @@
 // sayHello()
-// // const sayHello = function() {
-// //     console.log('this is declared with a function expression')
-// // }
+// const sayHello = function() {
+//     console.log('this is declared with a function expression')
+// }
 
 
 // function sayHello() {
@@ -57,30 +57,43 @@
 //     number : 1,
 //     boolean : true,
 //     anObject : {},
-//     anFunction : function(name){
-//          console.log('Hi '+ name + '!');
+//     anFunction : function(){
+//          console.log('Hi, this is a method of object');
 //     },
-//     arArray : []
+//     arArray : [],
 // }
 
-// anObject.anFunction('This Method!');
-
-
-
-// const james = 22
-// const valerie = 25
-// const kenneth = 27
-// const kalpesh = 29
-
-// if(kalpesh < james){
-//     console.log('Kalpesh is younger than James.');
-// }else if (kalpesh > valerie) {
-//     console.log('Kalpesh is older than valerie.');
-// }else if(kalpesh === kenneth){
-//     console.log('Kalpesh is old as kenneth.');
-// }else {
-//     console.log('non of condition are satisfied.');
+// const expenses = {
+//     laptopEMI: 15000,
+//     Home: 10000,
+//     fatherToGive: 5000,
+//     personalExp: 6000,
+//     emergency: (val) => {
+//         document.write('This is a emergency expenses ' + val)
+//     }
 // }
+
+// expenses.doctor = 2000
+// document.write(expenses['Home'] + '<br/>')
+// document.write(expenses['doctor'] + '<br/>')
+// expenses.emergency(2500);
+
+
+
+const james = 22
+const valerie = 25
+const kenneth = 27
+const kalpesh = 29
+
+if(kalpesh < james){
+    console.log('Kalpesh is younger than James.');
+}else if (kalpesh > valerie) {
+    console.log('Kalpesh is older than valerie.');
+}else if(kalpesh === kenneth){
+    console.log('Kalpesh is old as kenneth.');
+}else {
+    console.log('non of condition are satisfied.');
+}
 
 
 // const zell = {isHavingFun : true}
@@ -122,10 +135,10 @@
 // //     p.classList.add('super-power')
 // // }
 
-// const classAdd = document.getElementsByClassName('add')[0]
-// classAdd.classList.add('red')
+const classAdd = document.getElementsByClassName('add')[0]
+classAdd.classList.add('red')
 
-// const classRemove = document.getElementsByClassName('remove')[0]
+// const classRemove = document.getElementsByClassName('')[0]
 // classRemove.classList.remove('remove')
 
 // const containsOne = document.getElementsByClassName('contains1')[0]
@@ -548,61 +561,61 @@
 //    }
 // })
 
-const listenForFiveClicks = e => {   
-    const elem = e.currentTarget
-    const prevCount = parseInt(elem.dataset.count) || 0
-    const currentCount = prevCount + 1
+// const listenForFiveClicks = e => {   
+//     const elem = e.currentTarget
+//     const prevCount = parseInt(elem.dataset.count) || 0
+//     const currentCount = prevCount + 1
 
-    elem.dataset.count = currentCount
-    console.log(`clicked ${currentCount} times`)
+//     elem.dataset.count = currentCount
+//     console.log(`clicked ${currentCount} times`)
 
-    if(currentCount === 5) {
-        elem.removeEventListener('click', listenForFiveClicks)
-    }
-}
+//     if(currentCount === 5) {
+//         elem.removeEventListener('click', listenForFiveClicks)
+//     }
+// }
 
-const button = document.querySelector('button')
-button.addEventListener('click', listenForFiveClicks)
-
-
-const goodGuy = document.querySelectorAll('[data-type="good-guy"]')
-const character = document.querySelectorAll('.character')
-
-character.forEach(c => {
-    c.classList.add('star-wars')
-})
-
-goodGuy.forEach(c => {
-    c.classList.add('yay')
-})
+// const button = document.querySelector('button')
+// button.addEventListener('click', listenForFiveClicks)
 
 
-function callback () {
-    // do something
+// const goodGuy = document.querySelectorAll('[data-type="good-guy"]')
+// const character = document.querySelectorAll('.character')
+
+// character.forEach(c => {
+//     c.classList.add('star-wars')
+// })
+
+// goodGuy.forEach(c => {
+//     c.classList.add('yay')
+// })
+
+
+// function callback () {
+//     // do something
     
-}
+// }
   
 
-const elementOnEvent = document.querySelector('.event-listner')
+// const elementOnEvent = document.querySelector('.event-listner')
 
-elementOnEvent.addEventListener('click', () => {
-    elementOnEvent.classList.add('red')
-})
+// elementOnEvent.addEventListener('click', () => {
+//     elementOnEvent.classList.add('red')
+// })
 
-elementOnEvent.addEventListener('click', () => {
-    console.log('Hello World')
-})
+// elementOnEvent.addEventListener('click', () => {
+//     console.log('Hello World')
+// })
 
-function callbackAcceptingFunction(callback) {
-    // Execute callback here
-    callback('1', '2')
-}
+// function callbackAcceptingFunction(callback) {
+//     // Execute callback here
+//     callback('1', '2')
+// }
 
-function callback (arg1, arg2) {  
-    // Do something here
-    console.log(arg1)
+// function callback (arg1, arg2) {  
+//     // Do something here
+//     console.log(arg1)
     
-    console.log(arg2)
-}
+//     console.log(arg2)
+// }
 
-callbackAcceptingFunction(callback);
+// callbackAcceptingFunction(callback);
