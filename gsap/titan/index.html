@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        section {
+            height: 100vh;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .watch { position: absolute; left: 0; right: 0; margin: auto; top: 0; text-align: center; z-index: 9;}
+        .section-2 {background-color: aquamarine;}
+        .section-1 {background-color: antiquewhite;}
+        .section-3 {background-color:aquamarine}
+        .section-4 {background-color:beige}
+        .section-4 {background-color: blanchedalmond;}
+    </style>
+</head>
+<body>
+    <section class="section-1">
+        <div class="watch">
+            <img src="images/img-banner-watch.png" alt="watch">
+        </div>
+    </section>
+    <section class="section-2">
+    </section>
+    <section class="section-3"></section>
+    <section class="section-4"></section>
+    <section class="section-5"></section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to('.watch',{
+            duration: 5, 
+            scrollTrigger: {
+                trigger: '.watch',
+                start: "top 80%",
+                end: "top 20%",
+                markers: true,
+                toggleActions: "restart pause resume complete",  
+                scrub: 1,
+            }
+        })
+    </script>
+</body>
+</html>

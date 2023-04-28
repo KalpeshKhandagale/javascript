@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.panel {
+    height: 100vh;
+    background-color: tan;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.box-red {
+    background-color: red;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    transition: all 600ms ease-in-out;
+    background-color: tan;
+    color: white;
+}
+
+.nav-active {
+    color: black;
+    background-color: white;
+}
+
+ul {
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none ;
+}
+
+li {
+    margin-right: 60px;
+}
