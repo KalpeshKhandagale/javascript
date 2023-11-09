@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="pswp-gallery" id="my-gallery">
+    <section>
+        <div class="container">
+          <h1>Flickity Slider with Verticle Thumbnail</h1>
+      
+          <div class="row">
+            <div class="left">
+              <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain" : true, "pageDots": false, "contain": true, "setGallerySize": false }'>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="carousel carousel-main" data-flickity='{ "sync": ".carousel-nav", "prevNextButtons": false }'>
+                <div class="carousel-cell">
+                    <a href="https://miro.medium.com/v2/resize:fit:1400/1*LyZcwuLWv2FArOumCxobpA.png" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*LyZcwuLWv2FArOumCxobpA.png" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="https://img-c.udemycdn.com/course/750x422/495484_385c_3.jpg" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://img-c.udemycdn.com/course/750x422/495484_385c_3.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="https://miro.medium.com/v2/resize:fit:1400/0*SQr4X-dxr0TdK4DI.jpg" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/0*SQr4X-dxr0TdK4DI.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="https://miro.medium.com/v2/resize:fit:1400/1*Shk_5yhp2D-cWi40_4X4ow.jpeg" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*Shk_5yhp2D-cWi40_4X4ow.jpeg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="https://www.educative.io/api/page/5429180235776000/image/download/5343340281200640" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://www.educative.io/api/page/5429180235776000/image/download/5343340281200640" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="https://img.trentech.id/wp-content/uploads/2020/04/javascript-trentech_q0ub3d.jpg" data-pswp-width="1000" data-pswp-height="1000" target="_blank">
+                        <img src="https://img.trentech.id/wp-content/uploads/2020/04/javascript-trentech_q0ub3d.jpg" alt=""/>
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </section>
+
+
+
+
+      <!-- <div class="pswp-gallery" id="my-gallery"> -->
+            <!-- <a
+            href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg"
+            data-pswp-width="1875"
+            data-pswp-height="2500"
+            target="_blank"
+            >
+            <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"
+                alt=""
+            />
+            </a>
+        <a
+          href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+          data-pswp-width="1669"
+          data-pswp-height="2500"
+          target="_blank"
+        >
+          <img
+            src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"
+            alt=""
+          />
+        </a>
+        <a
+          href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+          data-pswp-width="2500"
+          data-pswp-height="1666"
+          target="_blank"
+        >
+          <img
+            src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"
+            alt=""
+          />
+        </a> -->
+      </div>
+
+
+
+
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="https://unpkg.com/flickity-sync@2.0.0/flickity-sync.js"></script>
+      <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+        const lightbox = new PhotoSwipeLightbox({
+        gallery: '#my-gallery',
+        children: 'a',
+        pswpModule: () => import('https://unpkg.com/photoswipe'),
+        });
+        lightbox.init();
+        </script>
+</body>
+</html>
