@@ -606,3 +606,9 @@ function callback (arg1, arg2) {
 }
 
 callbackAcceptingFunction(callback);
+
+// Home work
+
+const multiply = (num1, num2) => num1 * num2
+
+console.log(multiply(5,5))
