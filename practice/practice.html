@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off Canvas Menu</title>
+    <style>
+        body, html { height: 100%; }
+        .carousel { height: 100%;}
+        .carousel__contents {position: relative; width: 100%; height: 100%;}
+        .carousel__slide {position: absolute; width: inherit; height: inherit;}
+        .carousel__contents-container {overflow: hidden; width: 1170px; height: 100%;}
+        /* This code works if the width of one slide is 800px */
+        .carousel__slide:nth-child(2) {left: 1170px;}
+        .carousel__slide:nth-child(3) { left: 2340px;}
+        .carousel__dots { margin: 20px 0 0;}
+        .carousel__dot { cursor: pointer; width: 10px; height: 15px; border-radius: 50%; background: transparent; border: 1px solid #000; }
+        .carousel__dot.is-selected { background: #000;}
+    </style> 
+</head>
+<body>
+    <div class="carousel">
+        <button class="carousel__button previous-button" hidden>...</button>
+        <div class="carousel__contents-container">
+            <ul class="carousel__contents">
+                <li class="carousel__slide is-selected">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </li>
+                <li class="carousel__slide">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </li>
+                <li class="carousel__slide">
+                    <img src="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </li>
+            </ul>
+        </div>
+        <button class="carousel__button next-button">...</button>
+        <div class="carousel__dots">
+            <button class="carousel__dot is-selected"></button>
+            <button class="carousel__dot"></button>
+            <button class="carousel__dot"></button>
+        </div>
+    </div>
+    <script>
+        const carousel = document.querySelector('.carousel')
+        const previousButton = carousel.querySelector('.previous-button')
+        const nextButton = carousel.querySelector('.next-button')
+        const contents = carousel.querySelector('.carousel__contents')
+        const dots = Array.from(carousel.querySelectorAll('.carousel__dot'))
+        const slides = Array.from(carousel.querySelectorAll('.carousel__slide'))
+
+        nextButton.addEventListener('click', event => {
+            const currentSlide = contents.querySelector('.is-selected')
+            const nextSlide = currentSlide.nextElementSibling
+            const destination = getComputedStyle(nextSlide).left
+
+            contents.style.left = '-' + destination
+            currentSlide.classList.remove('is-selected')
+            nextSlide.classList.add('is-selected')
+
+            if (!nextSlide.nextElementSibling) {
+                nextButton.setAttribute('hidden', true)
+            }
+
+            previousButton.removeAttribute('hidden')
+        })
+
+        previousButton.addEventListener('click', event => {
+            const currentSlide = contents.querySelector('.is-selected')
+            const previousSlide = currentSlide.previousElementSibling
+            const destination = getComputedStyle(previousSlide).left
+
+            contents.style.left = '-' + destination
+            currentSlide.classList.remove('is-selected')
+            previousSlide.classList.add('is-selected')
+
+            if (!previousSlide.previousElementSibling) {
+                previousButton.setAttribute('hidden', true)
+            }
+
+            nextButton.removeAttribute('hidden')
+        })
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', event => {
+                let clickedDotIndex
+
+                for (let index = 0; index < dots.length; index++) {
+                    if (dots[index] === dot) {
+                        clickedDotIndex = index
+                    }
+                }
+
+                const slideToShow = slides[clickedDotIndex]
+                const destination = getComputedStyle(slideToShow).left
+                contents.style.left = '-' + destination
+
+                slides.forEach(slide => {
+                    slide.classList.remove('is-selected')
+                })
+
+                slideToShow.classList.add('is-selected')
+
+                dots.forEach(d => {
+                    d.classList.remove('is-selected')
+                })
+                
+                dot.classList.add('is-selected')
+
+            })
+        })
+    </script>
+</body>
+</html>

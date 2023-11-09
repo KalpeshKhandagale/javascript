@@ -58,50 +58,57 @@ previousButton.addEventListener('click', event => {
     prevDot.classList.add('is-selected')
 })
 
-dots.forEach(dot => {
-    dot.addEventListener('click', event => {
-        let clickedDotIndex
+// dots.forEach(dot => {
+//     dot.addEventListener('click', event => {
+//         let clickedDotIndex
 
-        for (let index = 0; index < dots.length; index++) {
-            if (dots[index] === dot) {
-                clickedDotIndex = index
-            }
-        }
-        // console.log(clickedDotIndex)
+//         for (let index = 0; index < dots.length; index++) {
+//             if (dots[index] === dot) {
+//                 clickedDotIndex = index
+//             }
+//         }
+//         // console.log(clickedDotIndex)
 
-        const slideToShow = slides[clickedDotIndex]
-        const destination = getComputedStyle(slideToShow).left
-        const currentSlide = contents.querySelector('.is-selected')
+//         const slideToShow = slides[clickedDotIndex]
+//         const destination = getComputedStyle(slideToShow).left
+//         const currentSlide = contents.querySelector('.is-selected')
 
-        slides.forEach(slide => {
-            slide.classList.remove('is-selected')
-        })
-        slideToShow.classList.add('is-selected')
-        // contents.style.left = '-' + destination
-        contents.style.transform = 'translateX(-' + destination + ')'
+//         slides.forEach(slide => {
+//             slide.classList.remove('is-selected')
+//         })
+//         slideToShow.classList.add('is-selected')
+//         // contents.style.left = '-' + destination
+//         contents.style.transform = 'translateX(-' + destination + ')'
 
-        // console.log(destination)
-
-
-        dots.forEach(d => {
-            d.classList.remove('is-selected')
-        })
-
-        dot.classList.add('is-selected')
+//         // console.log(destination)
 
 
-        // Show / hide buttons
-        if (clickedDotIndex === 0) {
-            previousButton.setAttribute('hidden', true)            
-            nextButton.removeAttribute('hidden')
-        } else if (clickedDotIndex === dots.length - 1) {
-            previousButton.removeAttribute('hidden')
-            nextButton.setAttribute('hidden', true)
-        } else {
-            previousButton.removeAttribute('hidden')
-            nextButton.removeAttribute('hidden')
-        }
-    })
+//         dots.forEach(d => {
+//             d.classList.remove('is-selected')
+//         })
+
+//         dot.classList.add('is-selected')
+
+
+//         // Show / hide buttons
+//         if (clickedDotIndex === 0) {
+//             previousButton.setAttribute('hidden', true)            
+//             nextButton.removeAttribute('hidden')
+//         } else if (clickedDotIndex === dots.length - 1) {
+//             previousButton.removeAttribute('hidden')
+//             nextButton.setAttribute('hidden', true)
+//         } else {
+//             previousButton.removeAttribute('hidden')
+//             nextButton.removeAttribute('hidden')
+//         }
+//     })
+// })
+
+dotContainer.addEventListener('click', event => {
+    const dot = event.target.closest('button')
+    if (dot) {
+        console.log('event delegation dot')
+    }
 })
 
 

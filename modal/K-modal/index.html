@@ -75,6 +75,8 @@
     <script>
         const modalOpenButton = document.querySelector('button')
         const modalCloseButton = document.querySelector('.modal-close')
+        const modalOverlay = document.querySelector('.modal-overlay')
+        const modal = document.querySelector('.modal')
         const body = document.body
 
         const ifModalIsOpen = _ => {
@@ -97,6 +99,16 @@
             modalIsClose()
         })
 
+        // modal.addEventListener('click', event => {
+        //     event.stopPropagation()
+        // })
+
+        modalOverlay.addEventListener('click', e => {
+            if (!e.target.closest('.modal')) {
+                modalIsClose()
+            }
+        })
+
         document.addEventListener('keydown', event => {
             if(ifModalIsOpen() && event.key === "Escape"){
                 modalIsClose()
@@ -104,4 +116,4 @@
         })
     </script>
 </body>
-</html>]
+</html>
