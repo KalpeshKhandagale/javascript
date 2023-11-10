@@ -18,11 +18,14 @@
     font-size: 80px;
     color: white;
   }
+
+  .carousel-main { width: 906px;}
   
   .carousel-main .carousel-cell {
     width: 100%;
+    height: 906px;
     font-size: 5rem;
-    padding-bottom: 56.25%;
+    /* padding-bottom: 56.25%; */
   }
 
     
