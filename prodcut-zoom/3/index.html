@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container my-4">
+        <div class="col-sm-6"> 
+            <div class="row">
+                <div class="col-11">
+                    <div class="carousel carousel-main" data-flickity='{
+                     "contain": true,
+                     "pageDots": true
+                   }'>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_1_720x.jpg?v=1561623061" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_5_720x.jpg?v=1561623067" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_2.jpg?v=1561623075" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_3.jpg?v=1561623088" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_4.jpg?v=1561623096" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_5_720x.jpg?v=1561623067" alt="orange tree" /></div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="carousel carousel-nav" data-flickity='{
+                      "asNavFor": ".carousel-main",
+                      "draggable": false,
+                      "percentPosition": true,
+                      "groupCells": "100%",
+                      "pageDots": false
+                    }'>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_1_720x.jpg?v=1561623061" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_5_720x.jpg?v=1561623067" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_2.jpg?v=1561623075" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_3.jpg?v=1561623088" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_4.jpg?v=1561623096" alt="orange tree" /></div>
+                        <div class="carousel-cell"><img src="https://cdn.shopify.com/s/files/1/0069/2142/0884/products/1506215309_5_720x.jpg?v=1561623067" alt="orange tree" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.shopify.com/s/files/1/0069/2142/0884/t/4/assets/jquery.min.js?47537"></script>
+    <script src="https://cdn.shopify.com/s/files/1/0069/2142/0884/t/4/assets/unpkg.min.js?47537"></script>
+
+    <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity-sync@2.0.0/flickity-sync.js"></script> -->
+
+    <script>
+        setTimeout(()=> {
+            const height = $('.flickity-viewport').height();
+            $('.carousel-nav').css('width', height);
+        },50)
+        // $(document).ready(function () {
+            
+        // });
+        // const flickityViewport = document.querySelector('.flickity-viewport');
+        // const getHeight = flickityViewport.height();
+        // console.log(getHeight)
+    </script>
+</body>
+</html>
