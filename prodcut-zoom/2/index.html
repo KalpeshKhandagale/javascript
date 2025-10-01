@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="carousel carousel-nav" data-flickity='{
+                        "asNavFor": ".carousel-main",
+                        "draggable": false,
+                        "percentPosition": false,
+                        "groupCells": "100%",
+                        "pageDots": false
+                        }'>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                            <div class="carousel-cell"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="carousel carousel-main" data-flickity='{
+                        "contain": true,
+                        "pageDots": true
+                    }'>
+                            <div class="carousel-cell">
+                                <a href="../1.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../1.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../2.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../2.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../3.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../3.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../4.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../4.jpg" alt="" />
+                                </a>
+                            </div>
+
+                            <div class="carousel-cell">
+                                <a href="../1.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../1.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../2.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../2.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../3.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../3.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="carousel-cell">
+                                <a href="../4.jpg" data-pswp-width="800" data-pswp-height="1200" target="_blank">
+                                    <img src="../4.jpg" alt="" />
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity-sync@2.0.0/flickity-sync.js"></script>
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#my-gallery',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe'),
+        });
+        lightbox.init();
+    </script>
+</body>
+</html>
