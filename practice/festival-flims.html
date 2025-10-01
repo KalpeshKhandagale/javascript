@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const films = [
+            {
+                "Title": "Parasite",
+                "Director": "Bong Joon-ho",
+                "Year": 2019,
+                "Genres": "Drama, Thriller, Comedy",
+                "Festival Awards": "Palme d'Or (Cannes 2019), Best Picture (Oscars 2020), Best Foreign Film (Golden Globes 2020)",
+                "IMDb (out of 10)": 8.5,
+                "Rotten Tomatoes (out of 100)": 99,
+                "Metacritic (out of 100)": 97,
+                "Average score(rating)": 93.7,
+                "Plot Summary": "A poor family of grifters slowly infiltrates a wealthy household by posing as unrelated service workers. What begins as a clever social con escalates into a shocking and tragic confrontation between the classes, exposing the fragile façade of comfort and status."
+            },
+            {
+                "Title": "Portrait of a Lady on Fire",
+                "Director": "Céline Sciamma",
+                "Year": 2019,
+                "Genres": "Drama, Romance, History",
+                "Festival Awards": "Best Screenplay (Cannes 2019), Queer Palm (Cannes 2019)",
+                "IMDb (out of 10)": 8,
+                "Rotten Tomatoes (out of 100)": 97,
+                "Metacritic (out of 100)": 95,
+                "Average score(rating)": 90.7,
+                "Plot Summary": "In 18th-century France, a young artist is commissioned to secretly paint a reluctant bride-to-be’s portrait. As the two women grow closer, their professional arrangement blossoms into a forbidden, fleeting romance framed by silence, memory, and longing."
+            },
+            {
+                "Title": "The Act of Killing",
+                "Director": "Joshua Oppenheimer, Christine Cynn",
+                "Year": 2012,
+                "Genres": "Documentary, History, Crime",
+                "Festival Awards": "Best Documentary (European Film Awards), Panorama Audience Award (Berlinale), Asia Pacific Screen Award",
+                "IMDb (out of 10)": 8.2,
+                "Rotten Tomatoes (out of 100)": 96,
+                "Metacritic (out of 100)": 92,
+                "Average score(rating)": 90,
+                "Plot Summary": "In Indonesia, former death squad leaders reenact their real-life mass killings through stylized cinematic genres, including musicals and gangster films. This haunting documentary exposes the surreal psychology of perpetrators who have never faced justice."
+            },
+            {
+                "Title": "Blue Is the Warmest Color",
+                "Director": "Abdellatif Kechiche",
+                "Year": 2013,
+                "Genres": "Drama, Romance",
+                "Festival Awards": "Palme d'Or (Cannes 2013)",
+                "IMDb (out of 10)": 7.7,
+                "Rotten Tomatoes (out of 100)": 88,
+                "Metacritic (out of 100)": 90,
+                "Average score(rating)": 85,
+                "Plot Summary": "A teenage girl’s world is turned upside down when she falls in love with an older, blue-haired art student. Their passionate romance propels her through emotional, social, and sexual awakenings in this intimate coming-of-age drama."
+            },
+            {
+                "Title": "Toni Erdmann",
+                "Director": "Maren Ade",
+                "Year": 2016,
+                "Genres": "Comedy, Drama",
+                "Festival Awards": "Grand Prix (Cannes 2016), FIPRESCI Prize (Cannes), Best Foreign Film (European Film Awards), Oscar-nominated (2017)",
+                "IMDb (out of 10)": 7.4,
+                "Rotten Tomatoes (out of 100)": 93,
+                "Metacritic (out of 100)": 93,
+                "Average score(rating)": 86.7,
+                "Plot Summary": "Unexpected emotional role-play between father and daughter reveals deep vulnerability."
+            },
+            {
+                "Title": "Cold War",
+                "Director": "Paweł Pawlikowski",
+                "Year": 2018,
+                "Genres": "Drama, Romance, Music",
+                "Festival Awards": "Best Director (Cannes 2018), Oscar-nominated (3 categories), EFA Best Film",
+                "IMDb (out of 10)": 7.5,
+                "Rotten Tomatoes (out of 100)": 92,
+                "Metacritic (out of 100)": 90,
+                "Average score(rating)": 85.7,
+                "Plot Summary": "A love story unfolds across Cold War-era borders with tragic consequences."
+            },
+            {
+                "Title": "The Square",
+                "Director": "Ruben Östlund",
+                "Year": 2017,
+                "Genres": "Comedy, Drama",
+                "Festival Awards": "Palme d’Or (Cannes 2017), EFA Best Film & Director, Oscar-nominated (Best Foreign Film)",
+                "IMDb (out of 10)": 7.7,
+                "Rotten Tomatoes (out of 100)": 85,
+                "Metacritic (out of 100)": 73,
+                "Average score(rating)": 78.3,
+                "Plot Summary": "The satirical art installation spirals into chaos, questioning moral decay in society."
+            }
+        ]
+
+
+    const findDirector = films.find(flim => flim.Title === "Toni Erdmann");
+    console.log(findDirector.Director);
+
+    const getFlimName = films.filter(flim => flim.Title).map(flim => flim.Title);
+    console.log(getFlimName);
+
+
+    const findDrama = films.filter(flim => flim.Genres.includes('Drama') && flim.Genres.includes('Romance')).map(flim => flim.Genres);
+    console.log(findDrama);
+
+    const uniqueGenres = [...new Set(findDrama)];
+    console.log(uniqueGenres);
+    </script>
+</body>
+
+</html>
