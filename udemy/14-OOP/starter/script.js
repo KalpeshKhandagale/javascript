@@ -189,6 +189,7 @@ class CarCl {
     brake() {
         this.speed -= 5;
         console.log(`${this.make} is going at ${this.speed} km/h`);
+        return this;
     }
 
     get speedUS() {
@@ -252,23 +253,33 @@ Car.prototype.brake = function() {
     console.log(`${this.make} is going at ${this.speed} km/h`);
 }
 
-const EV = function(make, speed, charge) {
-    Car.call(this, make, speed);
-    this.charge = charge;
+class EVCl extends CarCl {
+    #charge;
+    constructor(make, speed, charge) {
+        super(make, speed);
+        this.#charge = charge;      
+    }
+
+    chargeBattery(chargeTo) {
+        this.#charge = chargeTo;
+        return this;
+    }
+
+    accelerate() {
+        this.speed += 20;
+        this.#charge--;
+        console.log(`${this.make} is going at ${this.speed} km/h, with a charge of ${this.#charge}%`);
+        return this;
+    }
 }
+
+const rivian = new EVCl('Rivian', 120, 23);
+console.log(rivian);
+rivian.accelerate().accelerate().brake().chargeBattery(50).accelerate();
+console.log(rivian.speedUS);   
 
 // linked prototypes
 EV.prototype = Object.create(Car.prototype);
-
-EV.prototype.accelerate = function() {
-    this.speed += 20;
-    this.charge--;
-    console.log(`${this.make} is going at ${this.speed} km/h, with a charge of ${this.charge}%`);
-}
-
-EV.prototype.chargeBattery = function(chargeTo) {
-    this.charge = chargeTo;
-};
 
 const tesla = new EV('Tesla', 120, 23);
 tesla.chargeBattery(90);
@@ -296,3 +307,5 @@ class StudentCl extends PersonCl {
 const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
 martha.introduce();
 martha.calcAge();
+
+// Challege 4
