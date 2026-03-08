@@ -251,40 +251,40 @@ const getJSON = function(url, errorMsg = 'Something went wrong') {
     // })
     // .catch(err => console.error(err));
 
-    const loadPause = async function() {
-        try {
-            // Load image 1
-            let img = await createImage('img/img-1.jpg');
-            console.log('Image 1 loaded');
-            await wait(2);
-            img.style.display = 'none';
+    // const loadPause = async function() {
+    //     try {
+    //         // Load image 1
+    //         let img = await createImage('img/img-1.jpg');
+    //         console.log('Image 1 loaded');
+    //         await wait(2);
+    //         img.style.display = 'none';
 
-            // Load image 2
-            img = await createImage('img/img-2.jpg');
-            console.log('Image 2 loaded');
-            await wait(2);
-            img.style.display = 'none';
-        } catch(err) {
-            console.error(err);
-        }
-    }
+    //         // Load image 2
+    //         img = await createImage('img/img-2.jpg');
+    //         console.log('Image 2 loaded');
+    //         await wait(2);
+    //         img.style.display = 'none';
+    //     } catch(err) {
+    //         console.error(err);
+    //     }
+    // }
 
-    loadPause();
+    // loadPause();
 
     // Part 2
-    const loadAll = async function(imgArr) {
-        try {   
-            const imgs = imgArr.map(async img => await createImage(img));
-            createImage(img);
-            const imgsEl = await Promise.all(imgs);
-            console.log(imgsEl);
-            imgsEl.forEach(img => img.classList.add('parallel'));
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    // const loadAll = async function(imgArr) {
+    //     try {   
+    //         const imgs = imgArr.map(async img => await createImage(img));
+    //         createImage(img);
+    //         const imgsEl = await Promise.all(imgs);
+    //         console.log(imgsEl);
+    //         imgsEl.forEach(img => img.classList.add('parallel'));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
-    loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+    // loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
 
 
  
@@ -333,3 +333,49 @@ const getJSON = function(url, errorMsg = 'Something went wrong') {
 // }
 
 // get3Countries('portugal', 'canada', 'tanania');
+console.log('Test start');
+
+// function delayMessage() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve('Hello Kalpesh');
+//         }, 2000);
+//     })
+// }
+
+// delayMessage().then((msg) => console.log(msg));
+
+// 🧠 Practice 1
+// setTimeout(() => {
+//     console.log("Hello Kalpesh");
+// }, 2000);
+
+// 🧠 Practice 2
+// function showMessage() {
+//     setTimeout(() => {
+//         console.log("Hello Kalpesh");
+//     }, 2000);
+// }
+
+// showMessage();
+
+// 🧠 Practice 3
+
+// function dealyMessage() {
+//     return new Promise((resolve) => {
+//         resolve("Hello Kalpesh");
+//     })
+// }
+
+// dealyMessage().then((msg) => console.log(msg));
+
+// 🧠 Practice 4
+function dealyMessage() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello Kalpesh");
+        }, 2000);
+    })
+}
+
+dealyMessage().then((msg) => console.log(msg));
