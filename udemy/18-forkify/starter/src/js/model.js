@@ -40,7 +40,7 @@ export const loadSearchResults = async function(query) {
     try {
         state.search.query = query;
 
-        const data = await getJSON(`${API_URL}?search=pizza`);
+        const data = await getJSON(`${API_URL}?search=${query}`);
         console.log(data);
 
         state.search.results = data.data.recipes.map(rec => {
@@ -51,13 +51,12 @@ export const loadSearchResults = async function(query) {
                 image: rec.image_url,
             }
         });
+
     } catch (err) {
         console.error(`${err} 💥💥💥💥`);
         throw err;
     }
 };
-loadSearchResults('pizza');
-
 
 export const getSearchResultPage = function(page = state.search.page) {
     state.search.page = page;
@@ -66,4 +65,13 @@ export const getSearchResultPage = function(page = state.search.page) {
     const end =  page * state.search.resultsPerPage //9;
 
     return state.search.results.slice(start, end);
+}
+
+export const updateServings = function(newServings) {
+  state.recipe.ingredients.forEach(ing => {
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+    // newQt = oldQt * newServings / oldServings // 2 * 8 / 4 = 4
+  });
+
+  state.recipe.servings = newServings; 
 }
